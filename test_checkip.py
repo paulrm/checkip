@@ -10,11 +10,12 @@ def test_browser_request():
     assert response.status_code == 200
     assert response.headers["content-type"] == "application/json"
     assert "ip" in response.json()
+    assert response.json()["ip"] == "testclient"  # Adjusted for test environment
 
 def test_curl_request():
     headers = {"User-Agent": "curl/7.68.0"}
     response = client.get("/", headers=headers)
     assert response.status_code == 200
     assert response.headers["content-type"] == "text/plain; charset=utf-8"
-    assert response.text.strip() == "127.0.0.1"
+    assert response.text.strip() == "testclient"  # Adjusted for test environment
 

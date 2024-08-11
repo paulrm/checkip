@@ -6,7 +6,7 @@ VENV = .venv
 
 init:
 	python3 -m venv $(VENV)
-	$(VENV)/bin/pip install fastapi uvicorn requests pytest
+	$(VENV)/bin/pip install fastapi uvicorn requests pytest httpx
 
 test:
 	$(VENV)/bin/pytest test_checkip.py
