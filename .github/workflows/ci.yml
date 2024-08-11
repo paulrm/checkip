@@ -23,9 +23,19 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python -m venv .vend
-        .vend/bin/pip install --upgrade pip
-        .vend/bin/pip install fastapi uvicorn requests pytest httpx
+        python -m venv .venv
+        .venv/bin/pip install --upgrade pip
+        .venv/bin/pip install fastapi uvicorn requests pytest httpx pytest-cov
 
     - name: Run tests
-      run: .vend/bin/pytest test_checkip.py
+      run: .venv/bin/pytest test_checkip.py
+
+    - name: Run tests with coverage report
+      run: .venv/bin/pytest --cov=checkip --cov-report html:html_coverage_report test_checkip.py
+
+    - name: Save coverage report
+      if: success()
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: ./html_coverage_report/

@@ -7,6 +7,6 @@
     - ci/cd via github actions
 
 - 2do
-    - [ ] Add test coverage
+    - [x] Add test coverage
     - [ ] Add rate limit
     - [ ] deploy to VPS
