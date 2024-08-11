@@ -30,12 +30,7 @@ jobs:
     - name: Run tests
       run: .venv/bin/pytest test_checkip.py
 
-    - name: Run tests with coverage report
-      run: .venv/bin/pytest --cov=checkip --cov-report html:html_coverage_report test_checkip.py
-
-    - name: Save coverage report
-      if: success()
-      uses: actions/upload-artifact@v3
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v4.0.1
       with:
-        name: coverage-report
-        path: ./html_coverage_report/
+        token: ${{ secrets.CODECOV_TOKEN }}
