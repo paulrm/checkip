@@ -8,5 +8,13 @@
 
 - 2do
     - [x] Add test coverage
-    - [ ] Add rate limit
-    - [ ] deploy to VPS
+
+    - [x] Add rate limit
+        - Added X-Test-Bypass-Rate-Limit header to bypass rate limit for testing
+
+    - [ ] deploy to VPS 
+        - test -> checkip.test.enie.lat (en Merlot)
+        - uat -> checkip.uat.enie.lat (en Hermitage)
+        - prod -> checkip.enie.lat (en Hermitage)
+
+    - [ ] deploy to AWS EC2
