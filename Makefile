@@ -20,6 +20,12 @@ run:
 deploy:
 	$(VENV)/bin/uvicorn $(APP_NAME):app --host 0.0.0.0 --port $(PORT) --workers 4 --reload
 
+buildContainer:
+	docker build -t checkip .
+
+runContainer:
+	docker run -p 8000:8000 checkip
+
 clean:
 	rm -rf $(VENV)
 	rm -rf __pycache__

@@ -12,6 +12,8 @@
     - [x] Add rate limit
         - Added X-Test-Bypass-Rate-Limit header to bypass rate limit for testing
 
+    - [ ] Dockerize
+
     - [ ] deploy to VPS 
         - test -> checkip.test.enie.lat (en Merlot)
         - uat -> checkip.uat.enie.lat (en Hermitage)
